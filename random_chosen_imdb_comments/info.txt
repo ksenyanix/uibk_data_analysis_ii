@@ -1,0 +1,8 @@
+These files are chosen (nearly) randomly from the dataset "Large Movie Review
+Dataset" openly available online under:
+
+http://ai.stanford.edu/~amaas/data/sentiment/
+
+Accessed on 15th of October 2021
+
+Joseph Wang-Kathrein
