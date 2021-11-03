@@ -12,9 +12,10 @@ for root, directories, files in os.walk('random_chosen_imdb_comments'):
     for diacritic in diacritics:
         for file in files:
             filename = os.path.join(root, file)
-            with open(filename, 'r', encoding='utf8') as file:
-                t = file.read()
-                result = re.search(diacritic, t)
-                if result:
-                    print(f'{file}: {result.group()}')
+            if file != 'info.txt':
+                with open(filename, 'r', encoding='utf8') as file:
+                    t = file.read()
+                    result = re.search(diacritic, t)
+                    if result:
+                        print(f'{filename}: {result.group()}')
 
