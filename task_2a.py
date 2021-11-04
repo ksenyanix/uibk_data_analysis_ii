@@ -17,17 +17,17 @@ def searcher(text, reg):
 list_of_words = ['Hans', 'Gott', 'Es war einmal', 'langsam']
 ignorcase_list = validate_name(list_of_words)
 
-dir_path = r'C:\Users\Acer\OneDrive\Рабочий стол\uibk\vu data analytics ii\simplified_german_farytales'
+#dir_path = r'C:\Users\Acer\OneDrive\Рабочий стол\uibk\vu data analytics ii\simplified_german_farytales'
 
-for file in os.listdir(dir_path):
-    filename = os.path.join(dir_path, file)
-    with open(filename, 'r', encoding='utf8') as file:
-
-        t = file.read()
-        result_list = searcher(t, ignorcase_list)
-        for result in result_list:
-            if result:
-                print(f'{filename}: {result.group()}')
+for root, directories, files in os.walk('simplified_german_farytales'):
+    for file in files:
+        filename = os.path.join(root, file)
+        with open(filename, 'r', encoding='utf8') as file:
+            t = file.read()
+            result_list = searcher(t, ignorcase_list)
+            for result in result_list:
+                if result:
+                    print(f'{filename}: {result.group()}')
 
 
 
