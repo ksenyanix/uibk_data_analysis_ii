@@ -44,6 +44,7 @@ for file in dirs:
     file_to_string = content(file)
     words1.append(splitting(file_to_string))
     
+# unite the list
 words = []
 for sublist in words1:
     words.extend(sublist)
@@ -58,6 +59,7 @@ def unique(list1):
 
 unique_words_edit = unique(words)
 
+# remove punctuation and numbers
 def remove_punc(string):
     punc = '''!()-[]{};:'"\, <>./?@#$%^&*_~1234567890•'''
     for ele in string:  
@@ -68,16 +70,19 @@ def remove_punc(string):
 unique_words_edit = [remove_punc(i) for i in unique_words_edit]
 
 
+# remove empty strings
 unique_words = []
 for string in unique_words_edit:
     if (string != ""):
         unique_words.append(string)
         
+# create dictionary with unique words
 dic = {}
 
 for word in unique_words:
     dic.update({word: []})
 
+# check if word in a text, if so, add to the dictionary name of file
 dirs = location_of_files('simplified_german_farytales')
 for file in dirs:
     file_to_string = content(file)
