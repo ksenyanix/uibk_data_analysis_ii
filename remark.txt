@@ -1,7 +1,0 @@
-HWA: ++
-
-HWB: ++
-  Please note that your solution will only find the first occurrence of a letter with diacritic.
-
-HWC: +
-  Your solution will actually allow any email address that contains @student.uibk.ac.at. And please also note that it will also accept "bad.person@student-uibk-ac.at"
